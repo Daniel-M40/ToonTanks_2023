@@ -11,6 +11,7 @@ class TOONTANKS_API ABasePawn : public APawn
 {
 	GENERATED_BODY()
 
+
 public:
 	// Sets default values for this pawn's properties
 	ABasePawn();
@@ -20,7 +21,15 @@ protected:
 	virtual void BeginPlay() override;
 
 
+
+public:
+
+	UPROPERTY(EditAnywhere, Category= "TankPawn Config", meta=(DisplayName="Movement Speed"))
+	float mSpeed = 400.f;
+
 private:
+
+	
 
 	UPROPERTY()
 		class UCapsuleComponent* CapsuleComp;
