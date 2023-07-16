@@ -23,7 +23,7 @@ protected:
 
 
 public:
-
+  
 	UPROPERTY(EditAnywhere, Category= "TankPawn Config", meta=(DisplayName="Movement Speed"))
 	float mSpeed = 400.f;
 
@@ -31,24 +31,21 @@ private:
 
 	
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (DisplayName="Capsule Component", AllowPrivateAccess="true"))
 		class UCapsuleComponent* CapsuleComp;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (DisplayName = "Base Mesh", AllowPrivateAccess = "true"))
 		UStaticMeshComponent* BaseMesh;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (DisplayName = "Turret Mesh", AllowPrivateAccess = "true"))
 		UStaticMeshComponent* TurretMesh;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (DisplayName = "Projectile Spawn Point", AllowPrivateAccess = "true"))
 		USceneComponent* ProjectileSpawnPoint;
 
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 };
