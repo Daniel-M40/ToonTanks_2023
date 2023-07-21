@@ -16,16 +16,7 @@ public:
 	// Sets default values for this pawn's properties
 	ABasePawn();
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 
-
-
-public:
-  
-	UPROPERTY(EditAnywhere, Category= "TankPawn Config", meta=(DisplayName="Movement Speed"))
-	float mSpeed = 400.f;
 
 private:
 

@@ -21,14 +21,19 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-
-	//virtual void BeginPlay() override;
+protected:
+	virtual void BeginPlay() override;
 
 	//virtual void Tick(float DeltaSeconds) override;
+	
 
 private:
 
+	//Moves the tank forward and backwards
 	void Move(float value);
+
+	//Rotates the tank left and right
+	void Rotate(float value);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Camera Config", meta = (DisplayName="Camera Component", AllowPrivateAccess = "true"))
 		class UCameraComponent* CameraComp;
@@ -37,7 +42,15 @@ private:
 		class USpringArmComponent* SpringArmComp;
 
 
-	const FName mMoveForwardAction = "MoveForward";
+	UPROPERTY(EditAnywhere, Category = "Movement", meta = (DisplayName = "Movement Speed", AllowPrivateAccess = "true"))
+		float mMovementSpeed = 400.f;
 
+	UPROPERTY(EditAnywhere, Category = "Movement", meta = (DisplayName = "Rotation Speed", AllowPrivateAccess = "true"))
+		float mRotationSpeed = 200.f;
+
+	const FName mMoveForwardAction = "MoveForward";
+	const FName mTurnAction = "Turn";
+
+	APlayerController* mPlayerController;
 
 };
