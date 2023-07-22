@@ -35,8 +35,7 @@ private:
 		USceneComponent* ProjectileSpawnPoint;
 
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+protected:
+	void RotateTurret(const FVector& LookAtTarget, const float RotateSpeed = 100.f);
 
 };

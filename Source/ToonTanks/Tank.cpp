@@ -34,6 +34,31 @@
  }
 
 
+ // Called every frame
+ void ATank::Tick(float DeltaTime)
+ {
+	 Super::Tick(DeltaTime);
+
+
+	 if (mPlayerController)
+	 {
+		 const float SphereRadius = 25.f;
+		 const int SphereSegments = 12;
+
+		 FHitResult HitResult;
+
+		 mPlayerController->GetHitResultUnderCursor(ECC_Visibility, false, HitResult);
+
+		 if (mShowDebugSphere)
+			 DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, SphereRadius, SphereSegments, FColor::Red);
+
+		RotateTurret(HitResult.ImpactPoint, mTurretRotationSpeed);
+
+	}
+ }
+
+
+
  void ATank::Move(float value)
  {
 	 //UE_LOG(LogTemp, Warning, TEXT("Move: %f"), value);

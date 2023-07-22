@@ -21,10 +21,11 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	virtual void Tick(float DeltaSeconds) override;
+
 protected:
 	virtual void BeginPlay() override;
 
-	//virtual void Tick(float DeltaSeconds) override;
 	
 
 private:
@@ -47,6 +48,13 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Movement", meta = (DisplayName = "Rotation Speed", AllowPrivateAccess = "true"))
 		float mRotationSpeed = 200.f;
+
+	UPROPERTY(EditAnywhere, Category = "Movement", meta = (DisplayName = "Turret Rotation Speed", AllowPrivateAccess = "true"))
+		float mTurretRotationSpeed = 10.f;
+
+	UPROPERTY(EditAnywhere, meta = (DisplayName = "Debug Mode", AllowPrivateAccess = "true"))
+		bool mShowDebugSphere = true;
+
 
 	const FName mMoveForwardAction = "MoveForward";
 	const FName mTurnAction = "Turn";
