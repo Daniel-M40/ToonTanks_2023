@@ -36,6 +36,6 @@ private:
 
 
 protected:
-	void RotateTurret(const FVector& LookAtTarget, const float RotateSpeed = 100.f);
+	void RotateTurret(const FVector& LookAtTarget, const float RotateSpeed = 10.f);
 
 };
