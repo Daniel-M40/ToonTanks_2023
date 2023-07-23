@@ -23,6 +23,7 @@
 
 	 PlayerInputComponent->BindAxis(mMoveForwardAction, this, &ATank::Move);
 	 PlayerInputComponent->BindAxis(mTurnAction, this, &ATank::Rotate);
+	 PlayerInputComponent->BindAction(mFireAction, IE_Pressed, this, &ATank::Fire);
  }
 
 

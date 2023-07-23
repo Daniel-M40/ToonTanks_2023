@@ -52,12 +52,11 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Movement", meta = (DisplayName = "Turret Rotation Speed", AllowPrivateAccess = "true"))
 		float mTurretRotationSpeed = 10.f;
 
-	UPROPERTY(EditAnywhere, meta = (DisplayName = "Debug Mode", AllowPrivateAccess = "true"))
-		bool mShowDebugSphere = true;
 
 
 	const FName mMoveForwardAction = "MoveForward";
 	const FName mTurnAction = "Turn";
+	const FName mFireAction = "Fire";
 
 	APlayerController* mPlayerController;
 

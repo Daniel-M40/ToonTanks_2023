@@ -34,8 +34,13 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (DisplayName = "Projectile Spawn Point", AllowPrivateAccess = "true"))
 		USceneComponent* ProjectileSpawnPoint;
 
-
 protected:
 	void RotateTurret(const FVector& LookAtTarget, const float RotateSpeed = 10.f);
+
+	void Fire();
+
+
+	UPROPERTY(EditAnywhere, meta = (DisplayName = "Debug Mode", AllowPrivateAccess = "true"))
+		bool mShowDebugSphere = true;
 
 };

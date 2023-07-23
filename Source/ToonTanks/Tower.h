@@ -31,4 +31,13 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Tower Config", meta = (DisplayName = "Turret Rotation Speed", AllowPrivateAccess = "true"))
 		float mTurretRotationSpeed = 10.f;
+
+	FTimerHandle TimerHandle;
+	float FireRate = 2.f;
+
+	void CheckFireCondition();
+
+	bool IsActorInRange(const FVector& Actor);
+
+
 };

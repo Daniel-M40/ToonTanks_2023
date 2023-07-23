@@ -42,4 +42,17 @@ void ABasePawn::RotateTurret(const FVector& LookAtTarget, const float RotateSpee
 			RotateSpeed));
 }
 
+void ABasePawn::Fire()
+{
+	FVector SpawnPoint = ProjectileSpawnPoint->GetComponentLocation();
+	float sphereRadius = 12.f;
+	int sphereSegments = 10;
+	const float lifetime = 1.f;
+
+
+	if (mShowDebugSphere)
+		DrawDebugSphere(GetWorld(), SpawnPoint, sphereRadius, sphereSegments, FColor::Red, false, lifetime);
+
+}
+
 
