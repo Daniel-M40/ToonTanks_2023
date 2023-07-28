@@ -34,6 +34,9 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (DisplayName = "Projectile Spawn Point", AllowPrivateAccess = "true"))
 		USceneComponent* ProjectileSpawnPoint;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Combat")
+	TSubclassOf<class AProjectile> ProjectileClass;
+
 protected:
 	void RotateTurret(const FVector& LookAtTarget, const float RotateSpeed = 10.f);
 
