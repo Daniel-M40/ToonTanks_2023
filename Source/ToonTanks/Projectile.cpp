@@ -4,6 +4,7 @@
 #include "Projectile.h"
 
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AProjectile::AProjectile()
@@ -22,6 +23,7 @@ AProjectile::AProjectile()
 		ProjectileMovement->MaxSpeed = mMaxSpeed;
 	}
 
+
 }
 
 // Called when the game starts or when spawned
@@ -29,8 +31,25 @@ void AProjectile::BeginPlay()
 {
 	Super::BeginPlay();
 
+	mProjectileMesh->OnComponentHit.AddDynamic(this, &AProjectile::OnHit);
 
+}
 
+void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& HitResult)
+{
+	const AActor* CurrentOwner = GetOwner();
+
+	if (CurrentOwner)
+	{
+		AController* CurrentInstigator = CurrentOwner->GetInstigatorController();
+		UClass* DamageTypeClass = UDamageType::StaticClass();
+
+		if (OtherActor && OtherActor != this && OtherActor != CurrentOwner)
+		{
+			UGameplayStatics::ApplyDamage(OtherActor, Damage, CurrentInstigator, this, DamageTypeClass);
+			Destroy();
+		}
+	}
 
 }
 
