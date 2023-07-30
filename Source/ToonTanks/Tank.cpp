@@ -58,6 +58,13 @@
 	}
  }
 
+ void ATank::HandleDestruction()
+ {
+	 Super::HandleDestruction();
+	 SetActorHiddenInGame(true);
+	 SetActorTickEnabled(false);
+ }
+
 
 
  void ATank::Move(float value)

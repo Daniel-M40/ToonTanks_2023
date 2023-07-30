@@ -29,6 +29,14 @@ ABasePawn::ABasePawn()
 
 }
 
+
+void ABasePawn::HandleDestruction()
+{
+	//@@TODO Visual / Sound effects
+}
+
+
+
 void ABasePawn::RotateTurret(const FVector& LookAtTarget, const float RotateSpeed)
 {
 	//Get target location Mouse location - Current Location

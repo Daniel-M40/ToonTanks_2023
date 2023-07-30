@@ -23,6 +23,12 @@ public:
 
 	virtual void Tick(float DeltaSeconds) override;
 
+	void HandleDestruction();
+
+
+	APlayerController* GetPlayerController() const	{ return mPlayerController;	}
+	void SetPlayerController(APlayerController* PlayerController) { mPlayerController = PlayerController; }
+
 protected:
 	virtual void BeginPlay() override;
 
