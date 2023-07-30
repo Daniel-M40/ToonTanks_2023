@@ -24,5 +24,7 @@ public:
 
 	class ATank* Tank;
 
+	class AToonTanksPlayerController* PlayerController;
+
 	class ATower* Tower;
 };
