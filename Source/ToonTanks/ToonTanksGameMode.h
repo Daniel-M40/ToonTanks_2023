@@ -17,6 +17,8 @@ class TOONTANKS_API AToonTanksGameMode : public AGameModeBase
 protected:
 	void BeginPlay() override;
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void StartGame();
 
 public:
 
@@ -27,4 +29,8 @@ public:
 	class AToonTanksPlayerController* PlayerController;
 
 	class ATower* Tower;
+
+	float StartDelay = 3.f;
+
+	void HandleGameStart();
 };
