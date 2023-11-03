@@ -49,11 +49,10 @@ void ATower::CheckFireCondition()
 	if (Tank)
 	{
 		const FVector tankCurrentLocation = Tank->GetActorLocation();
-
-
-		if (IsActorInRange(tankCurrentLocation))
+		
+		//Fire at the tank if it is in range and alive
+		if (IsActorInRange(tankCurrentLocation) && Tank->bAlive)
 		{
-			//Rotate the turret to the tank
 			Fire();
 		}
 	}

@@ -16,13 +16,11 @@ public:
 	// Sets default values for this pawn's properties
 	ABasePawn();
 
+	void BeginPlay() override;
+	
 	void HandleDestruction();
 
-
-
-private:
-
-	
+private:	
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (DisplayName="Capsule Component", AllowPrivateAccess="true"))
 		class UCapsuleComponent* CapsuleComp;
@@ -39,6 +37,17 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
 	TSubclassOf<class AProjectile> ProjectileClass;
 
+	UPROPERTY(EditAnywhere, Category="Combat", meta=(DisplayName="Death particles"))
+	class UParticleSystem* DeathParticles;
+
+	UPROPERTY(EditAnywhere, Category="Combat")
+	class USoundBase* DeathSound;
+
+	UPROPERTY(EditAnywhere, Category="Combat")
+	TSubclassOf<class UCameraShakeBase> DeathCameraShakeClass;
+	
+	class AToonTanksGameMode* GameMode;
+	
 protected:
 	void RotateTurret(const FVector& LookAtTarget, const float RotateSpeed = 10.f);
 

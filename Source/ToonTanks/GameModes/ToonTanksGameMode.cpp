@@ -4,9 +4,9 @@
 #include "ToonTanksGameMode.h"
 
 #include "Kismet/GameplayStatics.h"
-#include "Tank.h"
-#include "ToonTanksPlayerController.h"
-#include "Tower.h"
+#include "ToonTanks/Controllers/ToonTanksPlayerController.h"
+#include "ToonTanks/Pawns/Tank.h"
+#include "ToonTanks/Pawns/Tower.h"
 
 void AToonTanksGameMode::BeginPlay()
 {

@@ -49,15 +49,17 @@ private:
 		class USpringArmComponent* SpringArmComp;
 
 
+	//Movement speed of the tank
 	UPROPERTY(EditAnywhere, Category = "Movement", meta = (DisplayName = "Movement Speed", AllowPrivateAccess = "true"))
 		float mMovementSpeed = 400.f;
 
+	//Rotation when turning round
 	UPROPERTY(EditAnywhere, Category = "Movement", meta = (DisplayName = "Rotation Speed", AllowPrivateAccess = "true"))
 		float mRotationSpeed = 200.f;
 
+	//Turrer rotation when using the mouse
 	UPROPERTY(EditAnywhere, Category = "Movement", meta = (DisplayName = "Turret Rotation Speed", AllowPrivateAccess = "true"))
 		float mTurretRotationSpeed = 10.f;
-
 
 
 	const FName mMoveForwardAction = "MoveForward";
@@ -66,4 +68,6 @@ private:
 
 	APlayerController* mPlayerController;
 
+public:
+	bool bAlive = true;
 };

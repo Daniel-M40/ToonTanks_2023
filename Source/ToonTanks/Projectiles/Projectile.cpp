@@ -5,6 +5,7 @@
 
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "Particles/ParticleSystemComponent.h"
 
 // Sets default values
 AProjectile::AProjectile()
@@ -23,7 +24,8 @@ AProjectile::AProjectile()
 		ProjectileMovement->MaxSpeed = mMaxSpeed;
 	}
 
-
+	TrailParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Smoke trail particles"));
+	TrailParticles->SetupAttachment(mProjectileMesh);
 }
 
 // Called when the game starts or when spawned
@@ -33,23 +35,52 @@ void AProjectile::BeginPlay()
 
 	mProjectileMesh->OnComponentHit.AddDynamic(this, &AProjectile::OnHit);
 
+	if (LaunchSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, LaunchSound, GetActorLocation(), GetActorRotation());
+	}
+
 }
 
 void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& HitResult)
 {
 	const AActor* CurrentOwner = GetOwner();
 
-	if (CurrentOwner)
+	if (!CurrentOwner)
 	{
-		AController* CurrentInstigator = CurrentOwner->GetInstigatorController();
-		UClass* DamageTypeClass = UDamageType::StaticClass();
+		Destroy();
+		return;
+	}
 
-		if (OtherActor && OtherActor != this && OtherActor != CurrentOwner)
+	AController* CurrentInstigator = CurrentOwner->GetInstigatorController();
+	UClass* DamageTypeClass = UDamageType::StaticClass();
+
+	//If the actor is not it self apply damage
+	if (OtherActor && OtherActor != this && OtherActor != CurrentOwner)
+	{
+		//Apply damage to the actor hit
+		UGameplayStatics::ApplyDamage(OtherActor, Damage, CurrentInstigator, this, DamageTypeClass);
+
+		if (HitParticles)
 		{
-			UGameplayStatics::ApplyDamage(OtherActor, Damage, CurrentInstigator, this, DamageTypeClass);
-			Destroy();
+			//Spawn hit particles at the location and rotation
+			UGameplayStatics::SpawnEmitterAtLocation(this, HitParticles, GetActorLocation(), GetActorRotation());
+		}
+
+		if (HitSound)
+		{
+			UGameplayStatics::PlaySoundAtLocation(this, HitSound, GetActorLocation(), GetActorRotation());
+		}
+
+		if (HitCameraShakeClass)
+		{
+			GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(HitCameraShakeClass);
 		}
 	}
+
+	//destroy the actor anyway
+	Destroy();
+	
 
 }
 

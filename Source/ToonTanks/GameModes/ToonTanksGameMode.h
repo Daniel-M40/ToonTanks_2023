@@ -41,4 +41,7 @@ public:
 	int TargetTowers = 0;
 
 	int GetTargetTowersCount() const;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bAllowShooting = false; //After the count down allow turrets and tanks to shoot
 };

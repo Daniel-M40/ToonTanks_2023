@@ -2,10 +2,10 @@
 
 
 #include "BasePawn.h"
-
-#include "Projectile.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "ToonTanks/GameModes/ToonTanksGameMode.h"
+#include "ToonTanks/Projectiles/Projectile.h"
 
 // Sets default values
 ABasePawn::ABasePawn()
@@ -25,14 +25,33 @@ ABasePawn::ABasePawn()
 
 	ProjectileSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Spawn Point"));
 	ProjectileSpawnPoint->SetupAttachment(TurretMesh);
+	
 
+}
 
+void ABasePawn::BeginPlay()
+{
+	Super::BeginPlay();
+
+	//Get game mode to check if turret is allowed to shoot
+	GameMode = Cast<AToonTanksGameMode>(UGameplayStatics::GetGameMode(this));
 }
 
 
 void ABasePawn::HandleDestruction()
 {
-	//@@TODO Visual / Sound effects
+	//Visual / Sound effects
+	if (DeathParticles)
+		UGameplayStatics::SpawnEmitterAtLocation(this, DeathParticles, GetActorLocation(), GetActorRotation());
+	
+
+	if (DeathSound)
+		UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation());
+	
+
+	if (DeathCameraShakeClass)
+		GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(DeathCameraShakeClass);
+	
 }
 
 
@@ -54,12 +73,16 @@ void ABasePawn::RotateTurret(const FVector& LookAtTarget, const float RotateSpee
 
 void ABasePawn::Fire()
 {
-	auto Projectile = GetWorld()->SpawnActor<AProjectile>(
-		ProjectileClass, 
-		ProjectileSpawnPoint->GetComponentLocation(),
-		ProjectileSpawnPoint->GetComponentRotation());
+	if (GameMode && GameMode->bAllowShooting)
+	{
+		AProjectile* Projectile = GetWorld()->SpawnActor<AProjectile>(
+			ProjectileClass, 
+			ProjectileSpawnPoint->GetComponentLocation(),
+			ProjectileSpawnPoint->GetComponentRotation());
 
-	Projectile->SetOwner(this);
+		Projectile->SetOwner(this);
+	}
+	
 }
 
 
