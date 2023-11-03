@@ -41,6 +41,8 @@ private:
 
 	//Rotates the tank left and right
 	void Rotate(float value);
+
+	void CloseGame(float value);
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Camera Config", meta = (DisplayName="Camera Component", AllowPrivateAccess = "true"))
 		class UCameraComponent* CameraComp;
@@ -65,6 +67,7 @@ private:
 	const FName mMoveForwardAction = "MoveForward";
 	const FName mTurnAction = "Turn";
 	const FName mFireAction = "Fire";
+	const FName mCloseGame = "CloseGame";
 	
 	APlayerController* mPlayerController;
 
