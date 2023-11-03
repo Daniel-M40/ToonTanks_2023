@@ -24,7 +24,6 @@
 
 	PlayerInputComponent->BindAxis(mMoveForwardAction, this, &ATank::Move);
 	PlayerInputComponent->BindAxis(mTurnAction, this, &ATank::Rotate);
-	PlayerInputComponent->BindAxis(mCloseGame, this, &ATank::CloseGame);
 	PlayerInputComponent->BindAction(mFireAction, IE_Pressed, this, &ATank::Fire);
  }
 
@@ -91,7 +90,3 @@
 	AddActorLocalRotation(DeltaRotation, true);
  }
 
- void ATank::CloseGame(float value)
- {
- 	FGenericPlatformMisc::RequestExit(false);
- }

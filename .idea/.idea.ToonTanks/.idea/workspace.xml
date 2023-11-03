@@ -8,16 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db2e91c9-d0c7-4760-99ce-a4bc9b5d20ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Build/Windows/Application.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/Volume/RestartVolume.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ToonTanks/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ToonTanks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToonTanks/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/CookerOpenOrder.log" beforeDir="false" afterPath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/CookerOpenOrder.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/EditorOpenOrder.log" beforeDir="false" afterPath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/EditorOpenOrder.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_PawnTank.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_PawnTank.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/WBP/WBP_EndGame.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/WBP/WBP_EndGame.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/Materials/M_ParticleBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/Materials/M_ParticleBase.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Volume/RestartVolume.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Volume/RestartVolume.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/Main.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Main.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Pawns/Tank.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Pawns/Tank.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ToonTanks/Pawns/Tank.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ToonTanks/Pawns/Tank.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Windows/Manifest_NonUFSFiles_Win64.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Windows/Manifest_NonUFSFiles_Win64.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Windows/Manifest_UFSFiles_Win64.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Windows/Manifest_UFSFiles_Win64.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Windows/ToonTanks/Content/Paks/ToonTanks-Windows.pak" beforeDir="false" afterPath="$PROJECT_DIR$/Windows/ToonTanks/Content/Paks/ToonTanks-Windows.pak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Windows/ToonTanks/Content/Paks/ToonTanks-Windows.ucas" beforeDir="false" afterPath="$PROJECT_DIR$/Windows/ToonTanks/Content/Paks/ToonTanks-Windows.ucas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Windows/ToonTanks/Content/Paks/ToonTanks-Windows.utoc" beforeDir="false" afterPath="$PROJECT_DIR$/Windows/ToonTanks/Content/Paks/ToonTanks-Windows.utoc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,34 +40,34 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2XfseMLnQVmR2oVrbt6ldRZ3VgN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Daniel Moir\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Daniel Moir\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\Daniel Moir\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Daniel Moir\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Daniel Moir\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Daniel Moir\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="ToonTanks" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -136,6 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699031565742</updated>
       <workItem from="1699031565745" duration="3937000" />
+      <workItem from="1699037337011" duration="723000" />
     </task>
     <servers />
   </component>
