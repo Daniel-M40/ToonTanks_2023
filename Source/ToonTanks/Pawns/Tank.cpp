@@ -19,11 +19,11 @@
 
  void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
  {
-	 Super::SetupPlayerInputComponent(PlayerInputComponent);
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	 PlayerInputComponent->BindAxis(mMoveForwardAction, this, &ATank::Move);
-	 PlayerInputComponent->BindAxis(mTurnAction, this, &ATank::Rotate);
-	 PlayerInputComponent->BindAction(mFireAction, IE_Pressed, this, &ATank::Fire);
+	PlayerInputComponent->BindAxis(mMoveForwardAction, this, &ATank::Move);
+	PlayerInputComponent->BindAxis(mTurnAction, this, &ATank::Rotate);
+	PlayerInputComponent->BindAction(mFireAction, IE_Pressed, this, &ATank::Fire);
  }
 
 
